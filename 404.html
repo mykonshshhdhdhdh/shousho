@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<html>
+<head>
+<permalink: /404.html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>搜索页</title>
+<style>
+body {
+background:#ffe1b4;
+}
+div {
+display: block;
+    margin: auto;
+    margin-top:6px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display:flex;
+}
+#button-a {
+width:50px;
+border-style:solid;
+border-color:black;
+}
+#input {
+border-style:solid;
+border-right:none;
+height:40px;
+width:200px;
+background:#eee;
+font-size:1.1em;
+color:#5d5d5d;
+border-color:black;
+}
+#button-b {
+width:50px;
+border-style:solid;
+border-color:black;
+border-right:none;
+}
+</style>
+</head>
+
+<body>
+
+<div>
+<select  id="button-b" required>
+<option value="百度">百度</option>
+<option value="搜狗">搜狗</option>
+<option value="哔哩哔哩">B站</option>
+<option value="萌娘百科">萌百</option>
+<option value="菜鸟教程">菜鸟</option>
+</select>
+<input type="text" id="input" onkeydown="shoub()">
+<button onclick="shou()" id="button-a">搜索</botton>
+
+
+</div>
+<script>
+function shou(){
+var myselect = document.getElementById("button-b");
+
+var index = myselect.selectedIndex;　　　　　　　
+var day = myselect.options[index].value;　　　
+let shou=document.getElementById('input').value;
+if(shou==""){
+alert("请输入");
+}else{
+if(day=="百度"){
+window.location.assign("https://m.baidu.com/s?from=1022282z&word="+shou)
+}
+if(day=="搜狗"){
+window.location.assign("https://wap.sogou.com/web/sl?keyword="+shou)
+}
+if(day=="哔哩哔哩"){
+window.location.assign("https://m.bilibili.com/search?keyword="+shou)
+}
+if(day=="萌娘百科"){
+window.location.assign("https://zh.moegirl.org.cn/index.php?title=Special:%E6%90%9C%E7%B4%A2&variant=Special%3ASearch&search="+shou)
+}
+if(day=="菜鸟教程"){
+window.location.assign("https://www.runoob.com/html/index.php?s="+shou)
+}
+}
+}
+function shoub(ev) {
+	var ev = ev || window.event
+	if(ev.keyCode == "13") {
+	shou();
+	}
+}
+</script>
+</body>
+</html>
