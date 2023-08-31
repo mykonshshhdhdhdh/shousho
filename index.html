@@ -61,7 +61,7 @@ border-right:none;
 </select>
 <script>
 var day = localStorage.day;　
-if(day==""){
+if(day==undefined){
 document.getElementById("button-b").value ="百度";
 }else{
 document.getElementById("button-b").value = day;}
