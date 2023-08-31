@@ -5,11 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>搜索页</title>
-<script>
-var day = localStorage.day;　
-document.write(day);
-document.getElementById("button-b").value = day;
-</script>
+
 <style>
 body {
 background:#ffe1b4;
@@ -63,6 +59,10 @@ border-right:none;
 <option value="菜鸟教程">菜鸟</option>
 <option value="头条">头条</option>
 </select>
+<script>
+var day = localStorage.day;　
+document.getElementById("button-b").value = day;
+</script>
 <input type="text" id="input" onkeydown="shoub()">
 <button onclick="shou()" id="button-a">搜索</botton>
 
