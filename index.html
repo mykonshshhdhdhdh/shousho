@@ -61,7 +61,10 @@ border-right:none;
 </select>
 <script>
 var day = localStorage.day;　
-document.getElementById("button-b").value = day;
+if(day==""){
+document.getElementById("button-b").value ="百度";
+}else{
+document.getElementById("button-b").value = day;}
 </script>
 <input type="text" id="input" onkeydown="shoub()">
 <button onclick="shou()" id="button-a">搜索</botton>
