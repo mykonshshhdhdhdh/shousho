@@ -68,7 +68,9 @@ if(day==undefined){
 document.getElementById("button-b").value ="百度";
 }else{
 document.getElementById("button-b").value = day;}
-
+if(ssyq==undefined){
+ssyq = "https://m.baidu.com/s?from=1022282z&word=";
+}
 </script>
 <input type="text" id="input" onkeydown="shoub()">
 <button onclick="shou()" id="button-a">搜索</botton>
@@ -83,7 +85,7 @@ var index = myselect.selectedIndex;　　　　　　　
  day = myselect.options[index].value;　　
 if(day=="自定义"){
 
-var yq=prompt("请输入链接","https://m.baidu.com/s?from=1022282z&word=");
+var yq=prompt("请输入链接",ssyq);
 if(yq!=null && yq!=""){
 ssyq=yq;
 localStorage.setItem("ssyq",ssyq);
