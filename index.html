@@ -42,11 +42,19 @@ border-style:solid;
 border-color:black;
 border-right:none;
 }
+#color {
+--color:5vw;
+width:var(--color);
+height:var(--color);
+border-radius:10vw;
+border-style:solid;
+background:linear-gradient(blue,red,yellow,green);
+}
 </style>
 </head>
 
 <body>
-
+<input type="color" id="color" onchange="color()" value="#ffe1b4">
 <div>
 <select  id="button-b" required onchange="zdy()">
 <option value="百度">百度</option>
@@ -64,6 +72,14 @@ border-right:none;
 <script>
 var day = localStorage.day;　
 var ssyq = localStorage.ssyq;　
+var col = localStorage.col;
+if(col==undefined){
+document.body.style.background= "#ffe1b4";
+document.getElementById('color').value="#ffe1b4";
+}else{
+document.body.style.background= col;
+document.getElementById('color').value=col;
+}
 if(day==undefined){
 document.getElementById("button-b").value ="百度";
 }else{
@@ -78,6 +94,11 @@ ssyq = "https://m.baidu.com/s?from=1022282z&word=";
 
 </div>
 <script>
+function color(){
+var col=document.getElementById('color').value;
+document.body.style.background= col;
+localStorage.setItem("col",col);
+}
 function zdy(){
 var myselect = document.getElementById("button-b");
 
@@ -96,6 +117,8 @@ document.getElementById("button-b").value ="百度";
 if(day=="删除数据"){
 localStorage.clear();
 document.getElementById("button-b").value ="百度";
+document.body.style.background= "#ffe1b4";
+document.getElementById('color').value="#ffe1b4";
 }
 }
 function shou(){
