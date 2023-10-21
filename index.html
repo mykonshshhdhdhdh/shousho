@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CH">
-<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -127,7 +126,7 @@ var myselect = document.getElementById("button-b");
 var index = myselect.selectedIndex;　　　　　　　
  day = myselect.options[index].value;　　　
 var shou=document.getElementById('input').value;
-if(shou==""){
+if(shou.trim()==""){
 alert("请输入");
 }else{
 
